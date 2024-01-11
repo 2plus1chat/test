@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --chat-orange: #f6cfaf;
+    --chat-rose: #f4a1a1;
+    --chat-noir: #333;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+::selection {
+    color: #fff;
+    background-color: var(--chat-orange);
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--chat-orange);
+    border-radius: 2px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header {
+    padding: 1rem 15rem 0rem 15rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 2;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 0rem 1rem 0rem;
+    border-bottom: 1px solid var(--chat-orange);
+}
+
+.logo {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--chat-noir);
+    font-size: 1.5rem;
+}
+
+.logo img {
+    height: 45px;
+    margin: 0px 10px;
+    padding: 0;
+}
+
+.menu-links ul {
+    list-style: none;
+    display: flex;
+}
+
+.menu-links ul li {
+    margin-right: 20px;
+}
+
+.menu-links ul li a {
+    text-decoration: none;
+    color: var(--chat-noir);
+    font-family: 'Poppins', sans-serif;
+}
+
+.hamburger-menu {
+    display: none;
+}
+
+.menu-links.active ul {
+    position: fixed;
+    top: 82px;
+    right: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, right 0s ease;
+}
+
+.menu-links.active + main {
+    transform: translateX(250px);
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .menu-links ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .menu-links ul li {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .line {
+        width: 25px;
+        height: 3px;
+        background-color: var(--chat-noir);
+        margin: 5px;
+    }
+}
+
+main {
+    max-width: 98vw;
+    margin: auto;
+    padding: 2rem 0rem 2rem 0rem;
+}
+
+section {
+    margin: auto;
+    margin-top: 100px;
+    padding: 1rem 15rem 1rem 15rem;
+    transition: transform 0.3s ease;
+}
+
+.section3 {
+    background: var(--chat-orange);
+    padding: 2rem 0rem 2rem 0rem;
+    width: 90%;
+}
+
+.section3 .follow {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+.section3 .follow h1 {
+    margin-bottom:10px;
+}
+
+.section3 .follow a {
+    color: var(--chat-noir);
+    font-size: 1.2em;
+    padding-right: 20px;
+}
+
+.section3 .follow a:hover {
+    
+}
+
+.section3 .follow a::before {
+    content: '';
+    display: inline-block;
+    width: 45px;
+    height: 45px;
+    background-image: url('/images/instagram.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0px 10px;
+    vertical-align: middle;
+}
+
+.section3 .grid {
+    display: flex;
+    margin: auto;
+    width: 80%;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.section3 .grid .gauche {
+    display: flex;
+}
+
+.section3 .grid .droite {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: flex-start;
+    align-content: center;
+    justify-content: center;
+}
+
+.section3 .grid .droite a {
+    width: 175px;
+    height: 175px;
+    margin: 0;
+}
+
+.section3 .grid .gauche a {
+    width: 370px;
+    height: 370px;
+    margin: 0px 20px;
+    flex: 0 0 auto;
+}
+
+.section3 .grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    padding: 0rem 15rem 0.5rem 15rem;
+    text-align: center;
+    width: 100%;
+    color: var(--chat-noir);
+    font-family: 'Poppins', sans-serif;
+}
+
+footer .follow {
+    display: flex;
+    padding: 1rem 0rem 1rem 0rem;
+    border-top: 1px solid var(--chat-orange);
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    margin: 0px 3px;
+    -o-transition: all 0.1s;
+    -moz-transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    transition: all 0.1s;
+}
+
+footer a:hover, footer a:focus {
+    -o-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+footer #facebook:before{
+    content:'\ea96';
+    font-family:'cappuccicons';
+    color: var(--chat-rose);
+    }
+
+footer #instagram:before{
+    content:'\eb2b';
+    font-family:'cappuccicons';
+    color: var(--chat-rose);
+    }
+
+    @media (max-width: 768px) {
+
+        main {
+            width: 100%;
+        }
+
+        header {
+            padding: 1rem 5rem 0rem 5rem;
+        }
+    
+        .section1 {
+            padding: 1rem 5rem;
+        }
+
+        .section3 {
+        }
+
+        .section3 .grid {
+            display: block;
+        }
+    
+        .section3 .grid .gauche {
+            width: calc(100% - 10px);
+            margin-bottom: 20px;
+        }
+
+        .section3 .grid .gauche a {
+            width: calc(90% - 10px);
+            height: calc(90% - 10px);
+            margin-bottom: 20px;
+        }
+
+        .section3 .grid .droite {
+            gap: 2px;
+        }
+    
+        .section3 .grid .droite a {
+            width: calc(50% - 10px);
+            height: calc(50% - 10px);
+            margin: 5px;
+        }
+    
+    }
